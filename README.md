@@ -1,11 +1,11 @@
 # myapp-ansible
 
 @jenkins server 
-global tool
-	ansible  
-yum install ansible 
+- global tool
+	- ansible  
+- yum install ansible 
 
 
 
 @ansible server 
-username to run as 
+- username to run as 
