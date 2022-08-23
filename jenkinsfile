@@ -1,0 +1,17 @@
+pipeline {
+	agent any 
+	stages {
+		stage('SCM Checkout'){
+			steps{
+			    git 'https://github.com/jaumendes/apache-with-ansible'
+			}
+		}
+	
+	    stage('EXECUTE Ansible')
+	        {
+		    steps{
+    		    ansiblePlaybook credentialsId: '9b9c1c08-e899-4b66-bce1-3a166d208efb', disableHostKeyChecking: true, installation: 'ansible2', inventory: 'dev.inv', playbook: 'apache.yml'
+		        }
+	        }
+	}
+}
